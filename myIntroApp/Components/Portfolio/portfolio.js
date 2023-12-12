@@ -1,4 +1,4 @@
-import PortfolioStyle from './portfilio_style';
+import PortfolioStyle from './PortfilioStyles';
 import { View, Text, Image,SafeAreaView } from 'react-native';
 import img from '../../assets/img.png'; 
 

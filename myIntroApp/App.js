@@ -1,5 +1,5 @@
 
-import Portfolio from './Components/Portfolio/portfolio';
+import Portfolio from './components/portfolio/Portfolio';
 
 export default function App() {
   return (
