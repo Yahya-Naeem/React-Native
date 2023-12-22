@@ -1,9 +1,20 @@
 import React from 'react';
-import Main from './components/mainpage/MainPage';
-
-
-
+import {View,StyleSheet} from 'react-native';
+import ItemProvider from './Contexts/ItemsContext';
+import MyStack from './navigations/mainnavigation';
 export default function App() {
   return(
-    <Main />
+    <View style={appStyle.container}>
+      <ItemProvider>
+        <MyStack />
+      </ItemProvider>
+    </View>
   )};
+
+  const appStyle = StyleSheet.create(
+    {
+      container:{
+        flex : 1,
+      }
+    }
+  )
