@@ -10,7 +10,7 @@ export default function Main({navigation}){
   const [taskContainer,setTaskContainer] = useContext(ItemContext);
   const [searchTask,setSearchTask] = useState('');
   
-  useEffect(()=>{},[taskContainer]);
+  useEffect(()=>{},[taskContainer])
   const handleAdd = () =>{
     //making object
     if(!description || !task)

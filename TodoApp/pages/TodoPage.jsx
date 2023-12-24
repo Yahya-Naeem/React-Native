@@ -5,10 +5,14 @@ import { ItemContext } from '../Contexts/ItemsContext';
 const TodoPage = ({route,navigation}) =>{
     //add delete and edit function
     const {title , descr} = route.params;
-    const [task,setTask] = useState(JSON.stringify(title));
     const [taskContainer,setTaskContainer] = useContext(ItemContext);
-    const [description,SetDescription] = useState(JSON.stringify(descr));
     
+    //for user inputs
+    const [task,setTask] = useState(title);
+    const [description,SetDescription] = useState(descr);
+    //for rener purpouses
+    const [taskRender,setTaskRender] = useState(title);
+    const [descriptionRender,SetDescriptionRender] = useState(descr);
 
     //Function to delete
     const handleRemove = () =>{
@@ -33,6 +37,8 @@ const TodoPage = ({route,navigation}) =>{
         taskContainer[index] = obj ;
         setTaskContainer(taskContainer);
         Alert.alert('','Task Edited Successfully'); //notify user
+        setTaskRender(task);
+        SetDescriptionRender(description);
         navigation.goBack();  
     }
     return(
@@ -40,7 +46,7 @@ const TodoPage = ({route,navigation}) =>{
             <ScrollView>
                 <View style={styles.tasksWrapper}>
                     <View style={styles.items}>
-                        <Todo text={title} description={descr} />
+                        <Todo text={taskRender} description={descriptionRender} />
                     </View>
                 </View>
             </ScrollView>
