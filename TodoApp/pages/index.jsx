@@ -1,6 +1,6 @@
 import {React,useContext} from 'react';
 import { View ,StyleSheet} from 'react-native'
-import {LoginContext} from '../Contexts/LoginContext';
+import {LoginContext,LoginProvider} from '../Contexts/LoginContext';
 import ItemProvider from '../Contexts/ItemsContext';
 import {MyStack,MyTabs} from '../navigations/index';
 
@@ -14,8 +14,9 @@ return (
 
     {
       !logInFlag && 
-      
+      <LoginProvider>
         <MyTabs />
+      </LoginProvider>
       
     }
 

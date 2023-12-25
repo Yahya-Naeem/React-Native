@@ -11,9 +11,7 @@ const Tab = createBottomTabNavigator();
 export default function MyTabs() {
   return (
     <NavigationContainer>
-        <Tab.Navigator
-        
-        >
+        <Tab.Navigator>
               <Tab.Screen
                 name="Welcome"
                 component={Welcome}

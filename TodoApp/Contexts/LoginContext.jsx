@@ -1,5 +1,5 @@
 import {React,useState,useEffect,createContext} from 'react'
-import { View,Text ,Alert} from 'react-native'
+import { Alert} from 'react-native'
 
 export const LoginContext = createContext();
 
@@ -7,13 +7,16 @@ export function LoginProvider(props) {
   const [username,setUsername] = useState('');
   const [password,setPassword] = useState('');
   const [logInFlag,setLogInFlag] = useState(false);
-  const handleLogin = (username,password) =>{
+  const handleLogin = () =>{
     if(!username || !password){
         Alert.alert('Error','Enter Valid Inputs');
     }
     else{
         if(username === 'Yahya' && password === '@123'){
             setLogInFlag(true);
+        }
+        else{
+            Alert.alert('','Wrong Username or Password');
         }
     }
   };
