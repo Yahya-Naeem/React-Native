@@ -1,34 +1,40 @@
 import {React,useContext} from 'react';
 import { View ,StyleSheet} from 'react-native'
-import {LoginContext,LoginProvider} from '../Contexts/LoginContext';
-import ItemProvider from '../Contexts/ItemsContext';
-import {MyStack,MyTabs} from '../navigations/index';
+import {LoginContext} from '../Contexts/LoginContext';
+import {MyStack,MyTabs,MyDrawer} from '../navigations/index';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function IndexApp() {
+
+const outerStack = createNativeStackNavigator();
+export default function IndexApp(){
   const {logInFlag} = useContext(LoginContext);
   
-return (
-    <View style={appStyle.container}>
-
-    {/**Consitional Rendering for New User */}
-
-    {
-      !logInFlag && 
-      <LoginProvider>
-        <MyTabs />
-      </LoginProvider>
-      
-    }
-
-    {/**Conditional rendering for authentic User */}
-
-    {logInFlag && 
-    <ItemProvider>
-      <MyStack />
-    </ItemProvider>}
-  </View>
-  )
-};
+  return(
+   <View style={appStyle.container}>
+     <outerStack.Navigator>
+              {/*Welcome Page Access */}
+             <outerStack.Screen 
+                name='AppEntry'                   
+                component={MyTabs}
+                options={{headerShown: false}}
+              />
+              {/*Main page access */}
+             <outerStack.Screen 
+               name='User'                        
+               component={MyStack}
+               options={{headerShown: false}}
+             />
+             {/*Setting page access */}
+             <outerStack.Screen 
+               name='Drawer'                       
+               component={MyDrawer}
+               options={{headerShown: false}}
+             />
+     </outerStack.Navigator>
+   </View>
+  );
+ };
+ 
 
 const appStyle = StyleSheet.create(
     {

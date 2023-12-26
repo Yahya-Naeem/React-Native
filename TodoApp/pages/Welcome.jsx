@@ -21,7 +21,7 @@ export default function Welcome({navigation}) {
           Stay organized and align your tasks effortlessly with our Todo App. Streamline your day, prioritize your goals, and enhance productivity with ease.
         </Text>
       </View>
-        <View style={styles.rowcontainer}>
+        <View style={[styles.rowcontainer,{flex:1}]}>
             <View style={styles.button}>
               <Button
               title='Get Started'
@@ -40,12 +40,12 @@ export default function Welcome({navigation}) {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#E8EAED',
+    backgroundColor:'black',
     padding:10,
   },
   rowcontainer:{
     flex:1,
-    padding:25,
+    padding:20,
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'center',
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   },
   taglinetext:{
     fontSize:20,
+    color:'white',
     textAlign:'center',
     fontFamily: 'Arial', // Set your preferred font family here
   },

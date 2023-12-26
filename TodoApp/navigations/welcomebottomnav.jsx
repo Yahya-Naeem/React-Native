@@ -1,7 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import SignUp from '../pages/Signup';
 import Login from '../pages/Login';
 import Welcome from '../pages/Welcome';
@@ -10,8 +8,10 @@ const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
   return (
-    <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
               <Tab.Screen
                 name="Welcome"
                 component={Welcome}
@@ -40,7 +40,6 @@ export default function MyTabs() {
               }}
               />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }
 

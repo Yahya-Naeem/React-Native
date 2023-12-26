@@ -1,8 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { TouchableOpacity,StyleSheet,TextInput ,View ,Text} from 'react-native'
 import {LoginContext} from '../Contexts/LoginContext';
-export default function Login() {
-  const [handleLogin,handleLogout,logInFlag,setPassword,password,username,setUsername] = useContext(LoginContext);
+export default function Login({navigation}) {
+  const [setLogInFlag,logInFlag,setPassword,password,username,setUsername] = useContext(LoginContext);
+  const handleLogin = () =>{
+    if(!username || !password){
+        Alert.alert('Error','Enter Valid Inputs');
+    }
+    else{
+        if(username === 'Yahya' && password === '@123'){
+            setLogInFlag(true);
+            navigation.navigate('User');
+        }
+        else{
+            Alert.alert('Error','Wrong Username or Password');
+        }
+    }
+  };
   return (
     <View style={styles.container}>
         <View style={styles.rowcontainer}>
@@ -14,8 +28,8 @@ export default function Login() {
           <TextInput style={styles.input} placeholder={'Username*'} value={username} onChangeText={text1=>setUsername(text1)} />
           <TextInput style={styles.input} placeholder={'Password*'} value={password} onChangeText={text2=>setPassword(text2)} />
           
-          <TouchableOpacity  >
-              <View style={styles.LogWrapper} onPress={()=>handleLogin()}>
+          <TouchableOpacity  onPress={()=>handleLogin()}>
+              <View style={[styles.LogWrapper, {backgroundColor: '#55BCF6',}]} >
                   <Text>Login</Text>
               </View>
             </TouchableOpacity>
@@ -31,7 +45,7 @@ export default function Login() {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#E8EAED',
+    backgroundColor:'black',
     padding:10,
   },
   rowcontainer:{
@@ -64,14 +78,13 @@ const styles = StyleSheet.create({
     marginBottom: -150, // Add some bottom margin for separation
   },
   input: {
-    flex:1,
     paddingVertical: 15,
     paddingHorizontal: 30,
     backgroundColor: '#FFF',
     borderRadius: 60,
     borderColor: '#C0C0C0',
     borderWidth: 1,
-    width: 250,
+    width: 350,
   },
   LogWrapper: {
     width: 70,

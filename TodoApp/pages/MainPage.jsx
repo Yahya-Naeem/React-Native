@@ -66,7 +66,7 @@ export default function Main({navigation}){
             onPress={handleSearch}
             >
               <View style={styles.searchButton}>
-                <Text>
+                <Text style={{color:'#55BCF6'}}>
                   Search
                 </Text>
               </View>
@@ -106,7 +106,7 @@ export default function Main({navigation}){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8EAED',
+    backgroundColor: 'black',
   },
   tasksWrapper: {
     paddingTop: 20,
@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     flex:0.5,
+    color:'#55BCF6',
     fontSize: 24,
     fontWeight: 'bold'
   },

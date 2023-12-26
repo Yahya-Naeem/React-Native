@@ -86,12 +86,12 @@ export default TodoPage;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#E8EAED',
+        backgroundColor: 'black',
       },
     addWrapper: {
         width: 40,
         height: 40,
-        backgroundColor: '#FFFF',
+        backgroundColor: '#55BCF6',
         borderRadius: 60,
         justifyContent: 'center',
         alignItems: 'center',
@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
       delWrapper:{
         width: 350,
         height: 40,
+        borderBlockColor:'red',
         backgroundColor: 'red',
         borderRadius: 60,
         justifyContent: 'center',
