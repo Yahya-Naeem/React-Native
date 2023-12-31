@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { TouchableOpacity,StyleSheet,TextInput ,View ,Text} from 'react-native'
-import {LoginContext} from '../Contexts/LoginContext';
+import { TouchableOpacity,StyleSheet,TextInput ,View ,Text,Alert} from 'react-native'
+import {LoginContext} from '../contexts/LoginContext';
 export default function Login({navigation}) {
   const [setLogInFlag,logInFlag,setPassword,password,username,setUsername] = useContext(LoginContext);
   const handleLogin = () =>{
@@ -13,7 +13,7 @@ export default function Login({navigation}) {
             navigation.navigate('User');
         }
         else{
-            Alert.alert('Error','Wrong Username or Password');
+            Alert.alert('Wrong Credentials','Wrong Username or Password');
         }
     }
   };
@@ -26,8 +26,7 @@ export default function Login({navigation}) {
         </View>
         <View style={styles.rowcontainer}>  
           <TextInput style={styles.input} placeholder={'Username*'} value={username} onChangeText={text1=>setUsername(text1)} />
-          <TextInput style={styles.input} placeholder={'Password*'} value={password} onChangeText={text2=>setPassword(text2)} />
-          
+          <TextInput secureTextEntry={true} style={styles.input} placeholder={'Password*'} value={password} onChangeText={text2=>setPassword(text2)} />
           <TouchableOpacity  onPress={()=>handleLogin()}>
               <View style={[styles.LogWrapper, {backgroundColor: '#55BCF6',}]} >
                   <Text>Login</Text>

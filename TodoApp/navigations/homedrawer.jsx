@@ -1,7 +1,7 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Setting from '../pages/Settings.jsx';
 import Main from '../pages/MainPage.jsx';
-import {LoginProvider} from '../Contexts/LoginContext.jsx';
+import {LoginProvider} from '../contexts/LoginContext.jsx';
 const HomeDrawer = createDrawerNavigator();
 
 function MyDrawer(){

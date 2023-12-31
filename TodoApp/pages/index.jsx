@@ -1,6 +1,6 @@
 import {React,useContext} from 'react';
 import { View ,StyleSheet} from 'react-native'
-import {LoginContext} from '../Contexts/LoginContext';
+import {LoginContext} from '../contexts/LoginContext';
 import {MyStack,MyTabs,MyDrawer} from '../navigations/index';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 

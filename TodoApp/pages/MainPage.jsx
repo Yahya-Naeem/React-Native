@@ -1,6 +1,6 @@
 import {KeyboardAvoidingView,Alert, Keyboard,ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useContext, useState, useEffect } from 'react';
-import { ItemContext } from '../Contexts/ItemsContext';
+import { ItemContext } from '../contexts/ItemsContext';
 import Todo from '../components/Todo';
 
 //Main component
@@ -90,7 +90,10 @@ export default function Main({navigation}){
         </View>
       </ScrollView>
       
-        <KeyboardAvoidingView style={styles.writeTaskWrapper}>
+        <KeyboardAvoidingView style={styles.writeTaskWrapper} 
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={100}
+        >
           <TextInput style={styles.input} placeholder={'Title*'} value={task} onChangeText={text1=>setTask(text1)} />
           <TextInput style={styles.input} placeholder={'Description*'} value={description} onChangeText={text2=>setDescription(text2)} />
           <TouchableOpacity onPress={()=>handleAdd()} >

@@ -1,6 +1,6 @@
 import {React,useContext} from 'react'
 import {View,StyleSheet,Text} from 'react-native';
-import LoginContext from '../Contexts/LoginContext';
+import LoginContext from '../contexts/LoginContext';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 export default function Settings({navigation}) {
   //const [setLogInFlag,logInFlag,setPassword,password,username,setUsername] = useContext(LoginContext);

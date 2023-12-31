@@ -1,7 +1,7 @@
 import {React, useContext,useState,useEffect } from 'react';
 import Todo from  '../components/Todo';
 import {View,Alert,Keyboard,ScrollView,Text,TextInput,SafeAreaView,KeyboardAvoidingView,TouchableOpacity,StyleSheet} from 'react-native';
-import { ItemContext } from '../Contexts/ItemsContext';
+import { ItemContext } from '../contexts/ItemsContext';
 const TodoPage = ({route,navigation}) =>{
     //add delete and edit function
     const {title , descr} = route.params;
