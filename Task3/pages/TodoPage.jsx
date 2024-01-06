@@ -52,7 +52,6 @@ const TodoPage = ({route,navigation}) =>{
             </ScrollView>
 
             <View>
-            
             <KeyboardAvoidingView style={styles.writeTaskWrapper}>
                 
                 {/**Edit Option */}
@@ -72,12 +71,8 @@ const TodoPage = ({route,navigation}) =>{
                         </View>
                     </TouchableOpacity>
                 </View>
-            </KeyboardAvoidingView>
-                
+            </KeyboardAvoidingView>      
             </View>
-                
-            {/*add de;ete button and edit button*/}
-
         </View>
     );
 }
