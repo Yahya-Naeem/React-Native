@@ -6,7 +6,8 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -19,12 +20,15 @@ import {
 
 //import components 
 import Welcome from './pages/Welcome';
-
+import Menu from './pages/Menu';
 function App(){
 
   return (
     <SafeAreaView style={styles.sectionContainer}>
-      <Welcome />
+      <NavigationContainer>
+        <Menu />
+      </NavigationContainer>
+
     </SafeAreaView>
   );
 }

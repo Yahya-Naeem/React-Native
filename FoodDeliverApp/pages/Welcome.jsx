@@ -1,5 +1,5 @@
 import {Text,View,SafeAreaView,StyleSheet,Image,Dimensions, TouchableOpacity} from 'react-native';
-import {React , useState } from 'react';
+import {React } from 'react';
 import DeliveryMan from '../assets/deliveryMan.svg';
 import Background from './../assets/Background.svg';
 import Rectangle from '../assets/Rectangle.svg';
@@ -9,7 +9,6 @@ const screenWidth = Dimensions.get('window').width;
 
 const Welcome = (navigation) => {
    const handleGetStarted = () =>{
-
    };
    return(
        <View style={styles.container}> 
