@@ -1,4 +1,5 @@
 import {Text,View,SafeAreaView,StyleSheet,Dimensions, TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 //importing assets
 import Scorpio from '../assets/Food Delivery App (Community)/Scorpio.svg';
 import Pizza from '../assets/Food Delivery App (Community)/Pizza1.svg';
@@ -9,18 +10,22 @@ import CapricciosaPizza from '../assets/CapricciosaPizza.svg';
 import CheesePizza from '../assets/CheesePizza.svg';
 
 import AddItem from '../assets/Food Delivery App (Community) (1)/Plus.svg';
-import FireEmoji from '../assets/FireEmoji.svg';
+
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 const Menu = () =>{
+    const navigation = useNavigation();
+    const handleItem = () =>{
+        navigation.navigate('Item');
+    }
     return(
         <View style={styles.container}>
             
             <View style={styles.sectioContainer}>
                 <View style={styles.textContainer}>
-                    <Text style={styles.wecomeText}>Hi alex</Text>
+                    <Text style={styles.wecomeText}>Hi Yahya</Text>
                     <Text style={styles.headLine}>Find you Delicious Food</Text>
                 </View>
                 <View style={styles.itemContainer}>
@@ -49,7 +54,7 @@ const Menu = () =>{
                 Popular
             </Text>
             <View style={styles.cardContainer}>
-                    <View style={[styles.card,styles.border]}>
+                    <View style={[styles.card]}>
                          <View>
                          <Text style={styles.cardText}>Meeting Cheese </Text> 
                          <Text style={styles.miniFont}> 44 Calories </Text> 
@@ -59,22 +64,22 @@ const Menu = () =>{
                         <View  style={{backgroundColor:'#EB5757',padding:1,borderRadius:3,opacity:0.9,marginTop:10}}><AddItem /></View>
                     </View>
 
-                    <View style={[styles.card,styles.border]}>
+                    <TouchableOpacity onPress={handleItem}>
+                    <View style={[styles.card]} pressed>
                         <Text style={styles.cardText}>Pizza Capricciosa</Text>
                         <Text style={styles.miniFont}> 54 Calories </Text>
                         <CapricciosaPizza height={screenHeight*0.2} width={screenWidth*0.30}/>
                         <Text style={{color:'#4F4F4F',fontSize:16,marginTop:-10}}><Text style={styles.miniFont}>$</Text>9.47</Text>
                         <View  style={{backgroundColor:'#EB5757',padding:1,borderRadius:3,opacity:0.9,marginTop:10}}><AddItem /></View>
                     </View>
+                    </TouchableOpacity>
             </View>
             <View style={{paddingHorizontal:138,}}>
                 <TouchableOpacity style={styles.menuBtn}>
                     <Text style={styles.btnText}>Menu</Text>
                 </TouchableOpacity>
-            </View>   
+            </View>
         </View>
-
-            
     </View>
     )
 };
@@ -97,6 +102,7 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:'space-around',
         alignItems:'flex-starts',
+        gap:-20
     },
     textContainer:{
         flex:1,
@@ -121,7 +127,7 @@ const styles = StyleSheet.create({
         color:'#4F4F4F',
         fontSize:21,
         fontWeight:'bold',
-        marginBottom:-20,
+        marginBottom:-10,
     },
     cardContainer:{
         flex:1,
