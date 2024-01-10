@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 
 //import components 
+import MyStack from './Navigations/Stack';
 import Welcome from './pages/Welcome';
 import Menu from './pages/Menu';
 function App(){
@@ -26,9 +27,8 @@ function App(){
   return (
     <SafeAreaView style={styles.sectionContainer}>
       <NavigationContainer>
-        <Menu />
+        <MyStack />
       </NavigationContainer>
-
     </SafeAreaView>
   );
 }
